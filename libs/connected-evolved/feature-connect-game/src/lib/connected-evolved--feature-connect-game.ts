@@ -18,3 +18,27 @@ export function ConnectGame(board?: Board, action?: Action): Board {
 
   return board;
 }
+
+function enoughInARow(
+  cells: Cell[],
+  direction: Direction,
+  amountToWin: number,
+  currentPlayer: Player
+): boolean {
+  if (cells.length < AMOUNT_TO_WIN) return false;
+
+  let inARowCount = 0;
+  switch (direction) {
+    case 'horizontal':
+      for (let i = 0; i < cells.length; i++) {
+        if (cells[i].owner == currentPlayer) {
+          inARowCount++;
+          console.log(inARowCount);
+          if (inARowCount == amountToWin) break;
+        } else inARowCount = 0;
+      }
+      break;
+  }
+  if (inARowCount >= amountToWin) return true;
+  return false;
+}
