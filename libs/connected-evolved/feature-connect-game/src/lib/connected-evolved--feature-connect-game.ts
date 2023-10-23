@@ -8,11 +8,28 @@ export function ConnectGame(board?: Board, action?: Action): Board {
   if (typeof action == 'undefined') return board;
   if (action.ticked) return board;
 
+  // Update the lowest empty cell
+
   const updatedCell: Cell = board.cells.find(
     (cell) => cell == getLowestEmptyCell(action, board)
   ) as Cell;
   updatedCell.ticked = true;
   updatedCell.owner = board.currentPlayer;
+
+  //Check for horizontal win
+
+  const horizontalAxis = updatedCell.y;
+  const cellsInRow = board.cells.filter((cell) => cell.y == horizontalAxis);
+  const horizontalWin = enoughInARow(
+    cellsInRow,
+    'horizontal',
+    AMOUNT_TO_WIN,
+    board.currentPlayer
+  );
+
+  if (horizontalWin) window.alert('Win!');
+
+  // Swap the current player
 
   board.currentPlayer = board.currentPlayer == 1 ? 2 : 1;
 
