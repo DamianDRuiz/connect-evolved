@@ -1,4 +1,5 @@
-import { Action, Board, Cell } from './types';
+import { AMOUNT_TO_WIN } from './constants';
+import { Action, Board, Cell, Direction, Player } from './types';
 import { getLowestEmptyCell } from './util/getLowestEmptyCell';
 import { newBoard } from './util/newBoard';
 
