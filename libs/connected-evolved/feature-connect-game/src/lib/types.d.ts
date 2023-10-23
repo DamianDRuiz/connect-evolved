@@ -1,6 +1,6 @@
 export interface Board {
-  currentPlayer: Player
-  cells: Cell[]
+  currentPlayer: Player;
+  cells: Cell[];
 }
 
 export interface Cell {
@@ -10,6 +10,6 @@ export interface Cell {
   owner: Player | null;
 }
 
-export type Player = 1 | 2
+export type Player = 1 | 2;
 
-export type Action = Cell
+export type Action = Cell;
