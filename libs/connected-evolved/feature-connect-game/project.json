@@ -1,0 +1,33 @@
+{
+  "name": "connected-evolved--feature-connect-game",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/connected-evolved/feature-connect-game/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/connected-evolved/feature-connect-game"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/libs/connected-evolved/feature-connect-game"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../../coverage/libs/connected-evolved/feature-connect-game"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/connected-evolved/feature-connect-game/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
