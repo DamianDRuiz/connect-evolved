@@ -9,12 +9,12 @@ export function App() {
     const target = e.target as HTMLDivElement
     const cellId: number = parseInt(target.id.split('-')[1])
     const newBoard = ConnectGame(board, board.cells[cellId])
-    console.log(newBoard)
     setBoard({...newBoard})
   }
 
   return (
     <>
+    
       <GameGrid cells={board.cells} columnCount={8} handleCellClick={handleCellClick} />
     </>
   );
