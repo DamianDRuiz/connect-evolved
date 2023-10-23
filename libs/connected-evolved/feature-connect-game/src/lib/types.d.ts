@@ -13,3 +13,5 @@ export interface Cell {
 export type Player = 1 | 2;
 
 export type Action = Cell;
+
+export type Direction = 'horizontal' | 'vertical'
